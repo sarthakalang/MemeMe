@@ -1,5 +1,5 @@
 //
-//  MemesTableTableViewController.swift
+//  MemesTableViewController.swift
 //  MemeMe
 //
 //  Created by Sarthak on 3/2/17.
@@ -8,20 +8,25 @@
 
 import UIKit
 
-class MemesTableTableViewController: UITableViewController {
+class MemesTableViewController: UITableViewController {
     
-   var memes:[Meme]!
-
+    var savedmemes: [Meme] {
+        return (UIApplication.shared.delegate as! AppDelegate).memes
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,23 +38,29 @@ class MemesTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return memes.count
+        return savedmemes.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemesTableCell", for: indexPath)
-        cell.imageView?.image=memes[indexPath.row].memedImage
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemesTableCell", for: indexPath) as! MemeTableViewCell
+        cell.memedImage?.image=savedmemes[indexPath.row].memedImage
+        cell.memeLabel.text=savedmemes[indexPath.row].topText
 
         return cell
     }
  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller:MemeDetailViewController
+        controller=storyboard?.instantiateViewController(withIdentifier: "memeDetail") as! MemeDetailViewController
+        controller.meme=self.savedmemes[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

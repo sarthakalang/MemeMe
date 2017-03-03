@@ -34,6 +34,8 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
         let meme = Meme(topText: top.text!, bottomText: bottom.text!, originalImage: ImagePickerView.image!, memedImage: memedImage)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
+        print("appended")
+        print("main data count is ",appDelegate.memes.count)
     }
     
     func resetAll(){
@@ -162,6 +164,7 @@ class MemeEditorViewController: UIViewController,UIImagePickerControllerDelegate
             (activity, success, items, error) in
             if(success){
                 self.save()
+                self.dismiss(animated: true, completion: nil)
             }
             else{
                 print("user cancelled UIActivity")

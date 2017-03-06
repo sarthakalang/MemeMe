@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5P6-PD-M2K" id="JoN-Gd-kvi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doR-b4-7gY">
@@ -262,7 +262,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q57-Hc-lJo" firstAttribute="trailing" secondItem="6b3-s2-Enx" secondAttribute="trailing" id="2LD-cL-tOn"/>
                             <constraint firstItem="IPX-uv-gFz" firstAttribute="leading" secondItem="1nB-aC-eE7" secondAttribute="leading" id="8gL-Mo-yxP"/>
@@ -308,15 +308,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ec5-1R-Spt">
-                                <rect key="frame" x="0.0" y="109" width="375" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ec5-1R-Spt" firstAttribute="leading" secondItem="Sgd-py-WUm" secondAttribute="leading" id="5L4-2L-xVY"/>
-                            <constraint firstItem="ec5-1R-Spt" firstAttribute="centerY" secondItem="Sgd-py-WUm" secondAttribute="centerY" id="GnZ-PU-bZD"/>
-                            <constraint firstItem="ec5-1R-Spt" firstAttribute="centerX" secondItem="Sgd-py-WUm" secondAttribute="centerX" id="TEE-27-c0w"/>
-                            <constraint firstItem="ec5-1R-Spt" firstAttribute="top" secondItem="Q6t-ep-iRk" secondAttribute="bottom" constant="89" id="sxI-jN-ON0"/>
+                            <constraint firstItem="Ju9-U5-5Y7" firstAttribute="top" secondItem="ec5-1R-Spt" secondAttribute="bottom" id="B31-4P-tum"/>
+                            <constraint firstItem="ec5-1R-Spt" firstAttribute="leading" secondItem="Sgd-py-WUm" secondAttribute="leadingMargin" constant="-16" id="VKi-Gi-JHU"/>
+                            <constraint firstItem="ec5-1R-Spt" firstAttribute="top" secondItem="Q6t-ep-iRk" secondAttribute="bottom" constant="-20" id="bSq-O8-buz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ec5-1R-Spt" secondAttribute="trailing" constant="-16" id="scV-t9-WC1"/>
                         </constraints>
                     </view>
                     <connections>

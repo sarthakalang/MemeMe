@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,21 +40,31 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5P6-PD-M2K" id="JoN-Gd-kvi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxT-Ef-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="62"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doR-b4-7gY">
-                                            <rect key="frame" x="73" y="0.0" width="297" height="62"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doR-b4-7gY">
+                                            <rect key="frame" x="91" y="0.0" width="260" height="62"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oxT-Ef-Z7w">
+                                            <rect key="frame" x="9" y="1" width="74" height="62"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="74" id="j5I-DW-GWM"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="doR-b4-7gY" firstAttribute="leading" secondItem="oxT-Ef-Z7w" secondAttribute="trailing" constant="8" id="Nrv-xn-29x"/>
+                                        <constraint firstItem="oxT-Ef-Z7w" firstAttribute="leading" secondItem="JoN-Gd-kvi" secondAttribute="leadingMargin" constant="1" id="OG5-b9-4Tu"/>
+                                        <constraint firstItem="doR-b4-7gY" firstAttribute="top" secondItem="JoN-Gd-kvi" secondAttribute="top" id="UWT-gw-mhh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="doR-b4-7gY" secondAttribute="trailing" constant="16" id="ZXF-uY-aNG"/>
+                                        <constraint firstItem="oxT-Ef-Z7w" firstAttribute="top" secondItem="JoN-Gd-kvi" secondAttribute="topMargin" constant="-7" id="ep9-Tu-rGg"/>
+                                        <constraint firstItem="oxT-Ef-Z7w" firstAttribute="centerY" secondItem="JoN-Gd-kvi" secondAttribute="centerY" id="fHW-h0-Rjl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="doR-b4-7gY" secondAttribute="bottom" constant="-5" id="nLC-Br-Jgd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="memeLabel" destination="doR-b4-7gY" id="hAp-Eg-u81"/>
@@ -322,6 +333,6 @@
         <image name="menu (2).png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xN3-5s-jnU"/>
+        <segue reference="5B9-Bm-Sed"/>
     </inferredMetricsTieBreakers>
 </document>
